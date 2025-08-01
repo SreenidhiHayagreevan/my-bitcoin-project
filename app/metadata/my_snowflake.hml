@@ -1,0 +1,617 @@
+kind: DataConnectorLink
+version: v1
+definition:
+  name: my_snowflake
+  url:
+    readWriteUrls:
+      read:
+        valueFromEnv: APP_MY_SNOWFLAKE_READ_URL
+      write:
+        valueFromEnv: APP_MY_SNOWFLAKE_WRITE_URL
+  headers:
+    Authorization:
+      valueFromEnv: APP_MY_SNOWFLAKE_AUTHORIZATION_HEADER
+  schema:
+    version: v0.1
+    schema:
+      collections:
+        - arguments: {}
+          deletable: true
+          description: null
+          foreign_keys: {}
+          insertable_columns: []
+          name: BTC_PRICES
+          type: BTC_PRICES
+          uniqueness_constraints:
+            BTC_PRICES_PK:
+              unique_columns: []
+          updatable_columns: []
+      functions: []
+      object_types:
+        BTC_PRICES:
+          description: null
+          fields:
+            CLOSE:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: FLOAT64
+                  type: named
+            DATE:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: DATE
+                  type: named
+            HIGH:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: FLOAT64
+                  type: named
+            LOW:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: FLOAT64
+                  type: named
+            OPEN:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: FLOAT64
+                  type: named
+            VOLUME:
+              arguments: {}
+              description: null
+              type:
+                type: nullable
+                underlying_type:
+                  name: FLOAT64
+                  type: named
+      procedures: []
+      scalar_types:
+        BIGDECIMAL:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: BIGDECIMAL
+                type: named
+            min:
+              result_type:
+                name: BIGDECIMAL
+                type: named
+            sum:
+              result_type:
+                name: BIGDECIMAL
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: BIGDECIMAL
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: BIGDECIMAL
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: BIGDECIMAL
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: BIGDECIMAL
+                type: named
+              type: custom
+          representation:
+            type: bigdecimal
+        BIGINTEGER:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: BIGINTEGER
+                type: named
+            min:
+              result_type:
+                name: BIGINTEGER
+                type: named
+            sum:
+              result_type:
+                name: BIGINTEGER
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: BIGINTEGER
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: BIGINTEGER
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: BIGINTEGER
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: BIGINTEGER
+                type: named
+              type: custom
+          representation:
+            type: biginteger
+        BOOLEAN:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: boolean
+        BYTES:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: bytes
+        DATE:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: DATE
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: DATE
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: DATE
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: DATE
+                type: named
+              type: custom
+          representation:
+            type: date
+        FLOAT32:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: FLOAT32
+                type: named
+            min:
+              result_type:
+                name: FLOAT32
+                type: named
+            sum:
+              result_type:
+                name: FLOAT32
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: FLOAT32
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: FLOAT32
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: FLOAT32
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: FLOAT32
+                type: named
+              type: custom
+          representation:
+            type: float32
+        FLOAT64:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: FLOAT64
+                type: named
+            min:
+              result_type:
+                name: FLOAT64
+                type: named
+            sum:
+              result_type:
+                name: FLOAT64
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: FLOAT64
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: FLOAT64
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: FLOAT64
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: FLOAT64
+                type: named
+              type: custom
+          representation:
+            type: float64
+        GEOGRAPHY:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: geography
+        GEOMETRY:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: geometry
+        INT8:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: INT8
+                type: named
+            min:
+              result_type:
+                name: INT8
+                type: named
+            sum:
+              result_type:
+                name: INT64
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: INT8
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: INT8
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: INT8
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: INT8
+                type: named
+              type: custom
+          representation:
+            type: int8
+        INT16:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: INT16
+                type: named
+            min:
+              result_type:
+                name: INT16
+                type: named
+            sum:
+              result_type:
+                name: INT64
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: INT16
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: INT16
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: INT16
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: INT16
+                type: named
+              type: custom
+          representation:
+            type: int16
+        INT32:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: INT32
+                type: named
+            min:
+              result_type:
+                name: INT32
+                type: named
+            sum:
+              result_type:
+                name: INT64
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: INT32
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: INT32
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: INT32
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: INT32
+                type: named
+              type: custom
+          representation:
+            type: int32
+        INT64:
+          aggregate_functions:
+            avg:
+              result_type:
+                name: FLOAT64
+                type: named
+            max:
+              result_type:
+                name: INT64
+                type: named
+            min:
+              result_type:
+                name: INT64
+                type: named
+            sum:
+              result_type:
+                name: INT64
+                type: named
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: INT64
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: INT64
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: INT64
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: INT64
+                type: named
+              type: custom
+          representation:
+            type: int64
+        JSON:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: json
+        STRING:
+          aggregate_functions:
+            max:
+              result_type:
+                name: STRING
+                type: named
+            min:
+              result_type:
+                name: STRING
+                type: named
+          comparison_operators:
+            _contains:
+              argument_type:
+                name: STRING
+                type: named
+              type: custom
+            _eq:
+              type: equal
+            _in:
+              type: in
+            _like:
+              argument_type:
+                name: STRING
+                type: named
+              type: custom
+          representation:
+            type: string
+        TIMESTAMP:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: TIMESTAMP
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: TIMESTAMP
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: TIMESTAMP
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: TIMESTAMP
+                type: named
+              type: custom
+          representation:
+            type: timestamp
+        TIMESTAMPTZ:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+            _gt:
+              argument_type:
+                name: TIMESTAMPTZ
+                type: named
+              type: custom
+            _gte:
+              argument_type:
+                name: TIMESTAMPTZ
+                type: named
+              type: custom
+            _in:
+              type: in
+            _lt:
+              argument_type:
+                name: TIMESTAMPTZ
+                type: named
+              type: custom
+            _lte:
+              argument_type:
+                name: TIMESTAMPTZ
+                type: named
+              type: custom
+          representation:
+            type: timestamptz
+        UUID:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: uuid
+        VECTOR:
+          aggregate_functions: {}
+          comparison_operators:
+            _eq:
+              type: equal
+          representation:
+            type: json
+    capabilities:
+      capabilities:
+        mutation: {}
+        query:
+          aggregates: {}
+          explain: {}
+          variables: {}
+        relationships:
+          order_by_aggregate: {}
+          relation_comparisons: {}
+      version: 0.1.6

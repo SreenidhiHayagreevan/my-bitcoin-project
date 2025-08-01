@@ -1,0 +1,71 @@
+{
+  "jdbcUrl" : {
+    "variable" : "JDBC_URL"
+  },
+  "jdbcProperties" : { },
+  "schemas" : [ ],
+  "tables" : [ {
+    "tableName" : "BTC_PRICES",
+    "tableType" : "TABLE",
+    "description" : null,
+    "columns" : [ {
+      "name" : "VOLUME",
+      "description" : null,
+      "type" : "FLOAT",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    }, {
+      "name" : "HIGH",
+      "description" : null,
+      "type" : "FLOAT",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    }, {
+      "name" : "DATE",
+      "description" : null,
+      "type" : "DATE",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    }, {
+      "name" : "OPEN",
+      "description" : null,
+      "type" : "FLOAT",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    }, {
+      "name" : "CLOSE",
+      "description" : null,
+      "type" : "FLOAT",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    }, {
+      "name" : "LOW",
+      "description" : null,
+      "type" : "FLOAT",
+      "numeric_precision" : null,
+      "numeric_scale" : null,
+      "nullable" : true,
+      "auto_increment" : false,
+      "is_primarykey" : false
+    } ],
+    "pks" : [ ],
+    "fks" : null
+  } ],
+  "functions" : [ ],
+  "nativeQueries" : { }
+}
