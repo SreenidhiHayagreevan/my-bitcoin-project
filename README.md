@@ -126,6 +126,7 @@ my-bitcoin-project/
 ├── otel-collector-config.yaml
 ├── promptql_cli_bot.py      ← CLI chatbot code
 ├── supergraph.yaml
+├── CoinGecko.ipynb
 └── .env
 ```
 
