@@ -58,6 +58,7 @@ for i in range(len(prices)):
         "volume": volume
     })
 df = pd.DataFrame(btc_data)
+```
 
 ### 3. Data Storage in Snowflake
 Connected to Snowflake using snowflake-connector-python
