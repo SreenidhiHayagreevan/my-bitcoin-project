@@ -118,16 +118,51 @@ What is the volatility trend of BTC this year?
 ## 📁 Repo Structure
 ```
 my-bitcoin-project/
+├── .devcontainer/
+│   └── devcontainer.json
+├── .hasura/
+│   └── context.yaml
+├── .vscode/
+│   ├── extensions.json
+│   ├── launch.json
+│   └── tasks.json
 ├── app/
+│   └── connector/
+│       └── my_snowflake/
+│           └── ...         # Files/folders for Snowflake connector logic
 ├── engine/
-├── compose.yaml
+│   └── Dockerfile.engine
 ├── globals/
+│   └── metadata/
+│       ├── auth-config.hml
+│       ├── compatibility-config.hml
+│       ├── graphql-config.hml
+│       ├── promptql-config.hml
+│       └── subgraph.yaml
+├── metadata/
+│   ├── .keep
+│   ├── btc_prices.hml
+│   ├── my_snowflake-types.hml
+│   ├── my_snowflake.hml
+│   └── subgraph.yaml
+├── .hasura-connector/
+│   ├── Dockerfile.my_snowflake
+│   ├── compose.yaml
+│   ├── configuration.json
+│   ├── connector.yaml
+│   └── connector-metadata.yaml
+├── .promptql_playground.db
+├── .gitattributes
+├── .gitignore
+├── CoinGecko.ipynb      # Jupyter notebook for data collection
+├── README.md
+├── compose.yaml
 ├── hasura.yaml
 ├── otel-collector-config.yaml
-├── promptql_cli_bot.py      ← CLI chatbot code
+├── promptql_cli_bot.py      # CLI chatbot interface
 ├── supergraph.yaml
-├── CoinGecko.ipynb
 └── .env
+
 ```
 
 ## 🏁 Summary
